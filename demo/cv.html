@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我的简历</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="js/form/css/form.css" />
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<!-- <script type="text/javascript" src="js/tdh.nicescroll.js" ></script> -->
+	<script type="text/javascript" src="js/DatePicker/WdatePicker.js" ></script>
+	<script type="text/javascript" src="js/form/js/tdh.form.js" ></script>
+	<link rel="stylesheet" href="css/cv.css" />
+	<script type="text/javascript" src="js/cv.js" ></script>
+	<script type="text/javascript" src="js/cv_form.js" ></script>
+</head>
+<body>
+	<table class="cv">
+		<colgroup>
+			<col />
+			<col width="15" />
+			<col width="300" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td class="cv_layout" height="96" colspan="3" align="center">
+					<span class="cv_topic">我的简历</span>
+				</td>
+			</tr>
+			<tr>
+				<td height="15" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="cv_layout">
+					<div class="cv_wrap">
+						<!--个人信息开始-->
+						<div class="cv_box">
+							<div class="cv_title">个人信息</div>
+							<form id="info">
+								<table class="cv_cont" cellpadding="0" cellspacing="20">
+									<colgroup>
+										<col width="120" />
+										<col />
+										<col width="200" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>姓名: </th>
+											<td><input name="username" class="inputText" type="text" placeholder="必填" /></td>
+											<td rowspan="6" align="center">
+												<img class="cv_photo" src="images/photo.jpg" />
+												<input name="file" id="file" type="file" style="visibility: hidden; position: absolute;" />
+												<a class="cv_upload" onclick="$('#file').trigger('click')">上传文件</a>
+												<p class="cv_tip">只支持JPG格式,大小不要超过500k<br />建议使用一寸证件照70*100像素</p>
+											</td>
+										</tr>
+										<tr>
+										<th>性别: </th>
+										<td>
+											<label class="cv_label"><input class="inputRadio" name="sex" type="radio" value="1" />男</label>
+											<label class="cv_label"><input class="inputRadio" name="sex" type="radio" value="2" />女</label>
+										</td>
+									</tr>
+									<tr>
+										<th>年龄: </th>
+										<td><input class="inputText" name="age" type="text" placeholder="必填" onkeyup="onlyNumber(this)" /></td>
+									</tr>
+									<tr>
+										<th>工作经验: </th>
+										<td>
+											<input class="inputText" name="worktext" type="text" placeholder="必填" onkeyup="onlyNum(this)" />
+											<label><input class="inputCheck" name="workbox" type="checkbox" value="0" />暂无工作经验</label>
+										</td>
+									</tr>
+									<tr>
+										<th>现居地: </th>
+										<td><input class="inputText" name="address" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th>联系方式: </th>
+										<td><input class="inputText" name="phone" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th>电子邮箱: </th>
+										<td><input class="inputText" name="mail" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input id="btn1" class="cv_btn blue mr20" type="submit" value="确定" />
+											<input id="btn2" class="cv_btn gray mr20" type="reset" value="重置" />
+											<input id="btn3" class="cv_btn" type="button" value="取消" />
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</form>
+						</div>
+						<!--个人信息结束-->
+						<!--求职意向开始-->
+						<div class="cv_box">
+							<div class="cv_title">求职意向</div>
+							<table class="cv_cont" cellpadding="0" cellspacing="20">
+								<colgroup>
+									<col width="120" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>期望从事职业: </th>
+										<td><input class="inputText" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th>求职状态: </th>
+										<td>
+											<select class="inputSel">
+												<option value=""></option>
+												<option value="1">我目前处于离职状态，可立即上岗</option>
+												<option value="2">我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）</option>
+												<option value="2">应届毕业生</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input id="btn1" class="cv_btn blue mr20" type="submit" value="确定" onclick="showData()" />
+											<input id="btn2" class="cv_btn gray mr20" type="reset" value="重置" />
+											<input id="btn3" class="cv_btn" type="button" value="取消" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--求职意向结束-->
+						<!--工作经验开始-->
+						<div class="cv_box">
+							<div class="cv_title">工作经验<a class="cv_addBtn fr hide"><i class="cv_icon icon_add"></i>新增工作经验</a></div>
+							<a class="cv_add"><i class="cv_icon icon_add"></i>新增工作经验</a>
+							<table class="cv_cont hide" cellpadding="0" cellspacing="20">
+								<colgroup>
+									<col width="120" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>公司名称: </th>
+										<td><input class="inputText fullwidth" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th>职位名称: </th>
+										<td><input class="inputText fullwidth" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th>在职时间: </th>
+										<td>
+											<table class="cv_datedom">
+												<tr>
+													<td><input class="Wdate inputText fullwidth" type="text" placeholder="请选择开始时间" onClick="WdatePicker()" readonly="readonly" /></td>
+													<td width="20" align="center">-</td>
+													<td><input class="Wdate inputText fullwidth" type="text" placeholder="请选择开始时间" onClick="WdatePicker()" readonly="readonly" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<th valign="top">工作描述: </th>
+										<td><textarea class="inputArea fullwidth" placeholder="必填"></textarea></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input class="cv_btn blue mr20" type="submit" value="确定" onclick="showData()" />
+											<input class="cv_btn gray mr20" type="reset" value="重置" />
+											<input class="cv_btn" type="button" value="取消" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--工作经验结束-->
+						<!--项目经验开始-->
+						<div class="cv_box">
+							<div class="cv_title">项目经验<a class="cv_addBtn fr hide"><i class="cv_icon icon_add"></i>新增项目经验</a></div>
+							<a class="cv_add"><i class="cv_icon icon_add"></i>新增项目经验</a>
+							<table class="cv_cont hide" cellpadding="0" cellspacing="20">
+								<colgroup>
+									<col width="120" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>项目名称: </th>
+										<td><input class="inputText fullwidth" type="text" placeholder="必填" /></td>
+									</tr>
+									<tr>
+										<th>项目时间: </th>
+										<td>
+											<table class="cv_datedom">
+												<tr>
+													<td><input class="Wdate inputText fullwidth" type="text" placeholder="请选择开始时间" onClick="WdatePicker()" readonly="readonly" /></td>
+													<td width="20" align="center">-</td>
+													<td><input class="Wdate inputText fullwidth" type="text" placeholder="请选择开始时间" onClick="WdatePicker()" readonly="readonly" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<th valign="top">项目描述: </th>
+										<td><textarea class="inputArea fullwidth" placeholder="更完善的项目信息有助于HR快速找到你"></textarea></td>
+									</tr>
+									<tr>
+										<th valign="top">个人职责: </th>
+										<td><textarea class="inputArea fullwidth" placeholder="更完善的工作信息有助于提升你的竞争力"></textarea></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input class="cv_btn blue mr20" type="submit" value="确定" onclick="showData()" />
+											<input class="cv_btn gray mr20" type="reset" value="重置" />
+											<input class="cv_btn" type="button" value="取消" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--项目经验结束-->
+						<!--教育经历开始-->
+						<div class="cv_box">
+							<div class="cv_title">教育经历<a class="cv_addBtn fr hide"><i class="cv_icon icon_add"></i>新增教育经历</a></div>
+							<a class="cv_add"><i class="cv_icon icon_add"></i>新增教育经历</a>
+							<table class="cv_cont hide" cellpadding="0" cellspacing="20">
+								<colgroup>
+									<col width="120" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>学校名称: </th>
+										<td><input class="inputText fullwidth" type="text" placeholder="请输入学校名称" /></td>
+									</tr>
+									<tr>
+										<th>就读时间: </th>
+										<td>
+											<table class="cv_datedom">
+												<tr>
+													<td><input class="Wdate inputText fullwidth" type="text" placeholder="请选择开始时间" onClick="WdatePicker()" readonly="readonly" /></td>
+													<td width="20" align="center">-</td>
+													<td><input class="Wdate inputText fullwidth" type="text" placeholder="请选择开始时间" onClick="WdatePicker()" readonly="readonly" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<th>所学专业: </th>
+										<td><input class="inputText fullwidth" type="text" placeholder="请输入专业名称" /></td>
+									</tr>
+									<tr>
+										<th>是否统招: </th>
+										<td>
+											<label class="cv_label"><input class="inputRadio" name="sftz" type="radio" />是</label>
+											<label class="cv_label"><input class="inputRadio" name="sftz" type="radio" />否</label>
+										</td>
+									</tr>
+									<tr>
+										<th valign="top">学历/学位: </th>
+										<td>
+											<select class="inputSel">
+												<option value=""></option>
+												<option value="大专">大专</option>
+												<option value="本科">本科</option>
+												<option value="博士">博士</option>
+												<option value="硕士">硕士</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input class="cv_btn blue mr20" type="submit" value="确定" onclick="showData()" />
+											<input class="cv_btn gray mr20" type="reset" value="重置" />
+											<input class="cv_btn" type="button" value="取消" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--教育经历结束-->
+						<!--自我评价开始-->
+						<div class="cv_box">
+							<div class="cv_title">自我评价</div>
+							<table class="cv_cont" cellpadding="0" cellspacing="20">
+								<colgroup>
+									<col width="120" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th valign="top">评价内容: </th>
+										<td><textarea class="inputArea fullwidth" placeholder="必填"></textarea></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>
+											<input class="cv_btn blue mr20" type="submit" value="确定" onclick="showData()" />
+											<input class="cv_btn gray mr20" type="reset" value="重置" />
+											<input class="cv_btn" type="button" value="取消" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--自我评价结束-->
+					</div>
+				</td>
+				<td></td>
+				<td class="cv_layout" valign="top">
+					<div class="cv_nav">
+						<ul>
+							<li><a class="active" data-index="0">个人信息</a></li>
+							<li><a data-index="1">求职意向</a></li>
+							<li><a data-index="2">工作经验</a></li>
+							<li><a data-index="3">项目经验</a> </li>
+							<li><a data-index="4">教育经历</a></li>
+							<li><a data-index="5">自我评价</a></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

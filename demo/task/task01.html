@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="/task/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/task/js/utils.js"></script>
+    <script type="text/javascript" src="../task/js/task01.js"></script>
+    <link rel="stylesheet" href="/task/css/task01.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tb_div" style="background-color: #ffe4c4;">
+        <div class="header  ">
+            <div>
+                <label>用户名/用户id:</label>
+                <input type="text" id="userid">
+            </div>
+            <div class="div_depart">
+                <label>用户部门:</label>
+                <input ty pe="text" id="user_department">
+            </div>  
+            <div class="div_depart">
+                <button id="search">查询</button>
+                <button id="add">新增</button>
+                <button id="logout">注销</button>
+            </div>
+        </div>
+        <div class="tb_body tb_div" style="border-left: 0; border-bottom: 0;"  >
+            <div class="tb_bodyleft  " style="width: 15% ; "  id="departTree">
+                <ul>部门1
+                    <li>测试1
+                    
+                    </li>
+                    <li>运维1
+                    
+                    </li>
+                    <li>开发1
+                    
+                    </li>
+                </ul>
+              
+            </div>
+            <div style="width: 65% ; ">
+                <table  style="width: 100% ; " cellspacing="0">
+                    <thead  style="background-color:#9e9891 ;">
+                        <tr >
+                            <th style="width: 10%; border-right: black solid 1px;"  >用户id</th>
+                            <th style="width: 20%; border-right: black solid 1px;" >用户姓名</th>
+                            <th style="width: 30%;border-right: black solid 1px;" >用户部门</th>
+                            <th style="width: 40%;border-right: black solid 1px;" ></th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody align="center" id="message">
+                        <tr class="layout">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+</html>

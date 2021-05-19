@@ -1,0 +1,39 @@
+
+span {
+    color: red;
+}
+table,tbody,td,tr,div,form,select,textarea,textarea,option{
+    border-collapse: collapse;
+    margin:0;
+    padding: 0;
+
+
+}
+.name_td {
+    text-align: right;
+    width: 15%;
+    background-color: #bac8ff;
+	font-size: 16px;
+	font-weight: normal;
+
+}
+
+.name_tbody {
+    width: 35%;
+}
+
+.input_div {
+    /* height: 100%; */
+    width: 99%;
+   border: none;
+}
+
+.input_depart{
+    
+    width: 100%;
+    /* height: 100%;; */
+  
+}
+textarea,option,select{
+   overflow-y:scroll; width: 100%; border: 0;
+}

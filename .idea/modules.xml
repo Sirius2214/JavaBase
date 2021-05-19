@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DemoJsp/DemoJsp.iml" filepath="$PROJECT_DIR$/DemoJsp/DemoJsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaBase.iml" filepath="$PROJECT_DIR$/JavaBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaCorrection/JavaCorrection.iml" filepath="$PROJECT_DIR$/JavaCorrection/JavaCorrection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JspCorrection/JspCorrection.iml" filepath="$PROJECT_DIR$/JspCorrection/JspCorrection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01/day01.iml" filepath="$PROJECT_DIR$/day01/day01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02/day02.iml" filepath="$PROJECT_DIR$/day02/day02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03Correction/day03Correction.iml" filepath="$PROJECT_DIR$/day03Correction/day03Correction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04/day04.iml" filepath="$PROJECT_DIR$/day04/day04.iml" />
+    </modules>
+  </component>
+</project>

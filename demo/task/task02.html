@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="/task/js/utils.js"></script>
+    <script type="text/javascript" src="../task/js/task02.js"></script>
+    <link rel="stylesheet" href="/task/css/task02.css" />
+    <title>用户信息</title>
+</head>
+
+<body>
+
+    <form action="" style="text-align: center; vertical-align: middle; background-color: #ebfbee;" id="info">
+        <div style="text-align: center; vertical-align: middle;">
+            <div>用户信息</div>
+            <table border="1" cellspacing="0" style="margin-left:auto;margin-right:auto;">
+                <tbody>
+                    <tr>
+                        <th class="name_td">
+                            <div>
+                                <span>*</span><label>用户姓名</label>
+                            </div>
+                        </th>
+                        <td class="name_tbody ">
+                            <div class="input_depart"> <input class="input_div" type="text" name="userName"
+                                    data-verify="required"></div>
+                        </td>
+                        <td class="name_td"></td>
+                        <td class="name_tbody"></td>
+                    </tr>
+                    <tr>
+                        <th class="name_td">
+                            <div>
+                                <span>*</span><label>用户口令</label>
+                            </div>
+                        </th>
+                        <td>
+                            <div> <input class="input_div" type="password" name="userPasswd" data-verify="required">
+                            </div>
+                        </td>
+                        <th class="name_td">
+                            <div>
+                                <label>重复口令</label>
+                            </div>
+                        </th>
+                        <td>
+                            <div> <input class="input_div" style="width: 99%;" type="password" name="userRePasswd" >
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="name_td">
+                            <div>
+                                <span>*</span><label>用户性别</label>
+                            </div>
+                        </th>
+                        <td>
+                            <div style="text-align: left;">
+                                <label></label><input name="sex" type="radio" value="1"
+                                    data-verify="required" />男</label>
+                                <label><input name="sex" type="radio" value="2" />女</label>
+                            </div>
+                        </td>
+                        <th class="name_td">
+                            <div>
+                                <span>*</span><label>兴趣爱好</label>
+                            </div>
+                        </th>
+                        <td>
+                            <div>
+                                <label><input type="checkbox" name="hobby" value="篮球" data-verify2="required">
+                                    篮球</label>
+                                <label><input type="checkbox" name="hobby" value="足球"> 足球</label>
+                                <label><input type="checkbox" name="hobby" value="唱歌"> 唱歌</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="name_td">
+                            <div>
+                                <span>*</span><label>部门</label>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="input_depart">
+                                <select class="input_depart" data-verify="required">
+                                    <option selected disabled style="display: none;" value="" name="depart">请选择部门
+                                    </option>
+                                    <option value="1" name="depart">研发</option>
+                                    <option value="2" name="depart">测试</option>
+                                    <option value="3" name="depart">运维</option>
+                                </select>
+                            </div>
+
+                        </td>
+                        <td class="name_td"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="name_td">
+                            <div>
+                                <label>自我介绍</label>
+                            </div>
+                        </th>
+                        <td colspan="3">
+                            <div> <textarea name="myProflie" data-verify="required"></textarea></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="align-content: center;">
+            <!-- <button id="save" type="button">保存</button>
+            <button id="close">关闭</button> -->
+            <input id="save" type="submit" value="保存" />
+            <input id="reset" type="reset" style="display:  none;" value="重置" />
+            <input id="close" type="button" value="取消" />
+
+        </div>
+
+    </form>
+    <script>
+
+    </script>
+</body>
+
+</html>
